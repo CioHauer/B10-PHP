@@ -126,7 +126,7 @@
     </div>
 </div>
 
-<input id="btn1" type="submit" name='submit' class="d-grid gap-2 col-3 mx-auto mt-5 mb-5 " value="Simulate">
+<input id="btn1" type="submit" name='submit' class="d-grid gap-2 col-3 mx-auto mt-5 mb-5 justify-content-center" value="Simulate">
 
 </form>
 
@@ -159,14 +159,15 @@
 
     //add point by counter
     if($maro!="" && $croi!=""){
-
         $matches["MORROCO"] += 1;
         $matches["CROATIE"] += 1;
+        // Store the number of goals scored by each team
         $goalfor["MORROCO"] += $maro;
         $goalfor["CROATIE"] += $croi;
+         // Store the number of goals conceded by each team
         $goalsConceded["MORROCO"] += $croi;
         $goalsConceded["CROATIE"] += $maro;
-
+// Store the number of wins, draws, and losses for each team
         if($maro > $croi ){
             $point["MORROCO"] += 3;
             $gagnant["MORROCO"] += 1;
@@ -332,19 +333,18 @@
         }
     }
 
-    //ceux compteur final en variables 
+ 
     $Mmat = $matches["MORROCO"] ;
     $CRmat = $matches["CROATIE"] ;
     $CAmat = $matches["CANADA"] ;
     $Bmat = $matches["BELGIUM"] ;
     
-    //ceux compteur final en variables 
     $Mpts =  $point["MORROCO"];
     $CRpts =  $point["CROATIE"];
     $CNpts =  $point["CANADA"];
     $Bpts =  $point["BELGIUM"];
 
-    //ceux compteur final en variables 
+ 
     $Mgan =  $gagnant["MORROCO"];
     $CRgan =  $gagnant["CROATIE"];
     $CNgan =  $gagnant["CANADA"];
@@ -376,7 +376,7 @@
 
 
 
-    //ceux compteur final en variables 
+ 
     $diffEQ1 = $Mgoal - $Mgoals ;
     $diffEQ2 = $CRgoal - $CRgoals ;
     $diffEQ3 = $CNgoal - $CNgoals ;
@@ -484,4 +484,37 @@ h2.mb-4.mt-4 {
 </style>
 </body>
 </html>
+<!-- // Function to generate the ranked table
+function generateTable() {
+  global $teams;
+  // Calculate the total points for each team
+  foreach ($teams as $team => $data) {
+    $teams[$team]['points'] = $data['wins'] * 3 + $data['draws'];
+  }
+  // Sort the teams based on their ranking criteria
+  uasort($teams, function ($a, $b) {
+    // First compare by points
+    if ($a['points'] != $b['points']) {
+      return $b['points'] - $a['points'];
+    }
+    // Then compare by goal difference
+    if ($a['goals_scored'] - $a['goals_conceded'] != $b['goals_scored'] - $b['goals_conceded']) {
+      return ($b['goals_scored'] - $b['goals_conceded']) - ($a['goals_scored'] - $a['goals_conceded']);
+    }
+    // Then compare by goals scored
+    if ($a['goals_scored'] != $b['goals_scored']) {
+      return $b['goals_scored'] - $a['goals_scored'];
+    }
+    // If still tied, use other criteria as defined in the problem statement
+    // ...
+    // If still tied, use the spirit points as a tiebreaker
+    // ...
+    // If still tied, consider the teams as equal
+    return 0;
+  });
+  // Output the ranked table
+  echo '<table>';
+  echo '<tr><th>Rank</ -->
+
+
 
