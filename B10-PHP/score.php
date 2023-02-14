@@ -47,3 +47,23 @@ foreach ($matches as $match) {
 </div>
 <?php $counter++; } ?>
 </form>
+
+<script>
+  function sortMatches() {
+    let matchArray = [
+      {team1: "Belgium", team2: "Canada", score1: parseInt(document.querySelector('input[name="belgFirst"]').value), score2: parseInt(document.querySelector('input[name="canaFirst"]').value)},
+      {team1: "Croatia", team2: "Morocco", score1: parseInt(document.querySelector('input[name="croiFirst"]').value), score2: parseInt(document.querySelector('input[name="maroFirst"]').value)},
+      {team1: "Croatia", team2: "Canada", score1: parseInt(document.querySelector('input[name="croiSecond"]').value), score2: parseInt(document.querySelector('input[name="canSecond"]').value)},
+      {team1: "Morroco", team2: "Belgium", score1: parseInt(document.querySelector('input[name="maroSecond"]').value), score2: parseInt(document.querySelector('input[name="belgSecond"]').value)},
+      {team1: "Morroco", team2: "Canada", score1: parseInt(document.querySelector('input[name="maroThird"]').value), score2: parseInt(document.querySelector('input[name="canaThird"]').value)},
+      {team1: "Belgium", team2: "Croatia", score1: parseInt(document.querySelector('input[name="belgThird"]').value), score2: parseInt(document.querySelector('input[name="croiThird"]').value)},
+      // Add the rest of the matches here
+    ];
+
+    matchArray.sort(function(a, b) {
+      return b.score1 - b.score1;
+    });
+
+    // display the sorted matches
+  }
+</script>
