@@ -131,15 +131,6 @@
 
 
 <?php
-    // counter
-    $point = array("MORROCO" => 0, "CROATIE" => 0, "CANADA" => 0, "BELGIUM" => 0); 
-    $matches = array("MORROCO" => 0, "CROATIE" => 0, "CANADA" => 0, "BELGIUM" => 0);
-    $gagnant = array('MORROCO' => 0, 'CROATIE' => 0 , 'CANADA' => 0 , 'BELGIUM' => 0);
-    $null = array("MORROCO" => 0 , "CROATIE" => 0, "CANADA" => 0, "BELGIUM" => 0);
-    $defaite = array("MORROCO" => 0 , "CROATIE" => 0, "CANADA" => 0, "BELGIUM" => 0);
-    $goalfor = array("MORROCO" => 0 , "CROATIE" => 0, "CANADA" => 0, "BELGIUM" => 0);
-    $goalsConceded = array("MORROCO" => 0 , "CROATIE" => 0, "CANADA" => 0, "BELGIUM" => 0);
-
     if (isset($_GET['submit'])) {
         $teams = ["MORROCO", "CROATIE", "BELGIUM", "CANADA"];
     // the arrays are filled with 0 values for each team using the array_fill_keys function
@@ -225,10 +216,10 @@
     $CNgoal = $goalfor["CANADA"];
     $Bgoal =  $goalfor["BELGIUM"];
 
-    $Mgoals =  $goalsConceded["MORROCO"];
-    $CRgoals = $goalsConceded["CROATIE"];
-    $CNgoals = $goalsConceded["CANADA"];
-    $Bgoals =  $goalsConceded["BELGIUM"];
+    $Mgoals =  $goalsAgainst["MORROCO"];
+    $CRgoals = $goalsAgainst["CROATIE"];
+    $CNgoals = $goalsAgainst["CANADA"];
+    $Bgoals =  $goalsAgainst["BELGIUM"];
 
     $diffEQ1 = $Mgoal - $Mgoals ;
     $diffEQ2 = $CRgoal - $CRgoals ;
